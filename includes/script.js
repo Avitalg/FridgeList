@@ -24,7 +24,7 @@ $(window).load(function(){
 			var jsonData = "";
 			$.each(json.recipes, function(index, recipe){
 				jsonData += '<li><a href="recipeDetails.php?recipeId=' + recipe.recipe_id + '">';
-				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><p>' + recipe.name + '</p></a></li>';
+				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><span></span><p>' + recipe.name + '</p></a></li>';
 			});
 			$("#pRec").append(jsonData);
 		});
@@ -36,7 +36,7 @@ $(window).load(function(){
 			var jsonData = "";
 			$.each(json.recipes, function(index, recipe){
 				jsonData += '<li><a href="recipeDetails.php?recipeId=' + recipe.recipe_id + '">';
-				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><p>' + recipe.name + '</p></a></li>';
+				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><span></span><p>' + recipe.name + '</p></a></li>';
 			});
 			$("#pRec").append(jsonData);
 		});
@@ -176,7 +176,7 @@ $(window).load(function(){
 			json.recipes = _.sortBy(json.recipes, ['name', 'asc']);
 			$.each(json.recipes, function(index, recipe){
 				jsonData += '<li><a href="recipeDetails.php?recipeId=' + recipe.recipe_id + '">';
-				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><p>' + recipe.name + '</p></a></li>';
+				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><span></span><p>' + recipe.name + '</p></a></li>';
 			});
 			$("#pRec").append(jsonData);
 		});
@@ -192,7 +192,7 @@ $(window).load(function(){
 			json.recipes = _.sortBy(json.recipes, ['rating', 'asc']);
 			$.each(json.recipes, function(index, recipe){
 				jsonData += '<li><a href="recipeDetails.php?recipeId=' + recipe.recipe_id + '">';
-				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><p>' + recipe.name + '</p></a></li>';
+				jsonData += '<img src="' + recipe.recipelink + '" alt="' + recipe.name + '"><span></span><p>' + recipe.name + '</p></a></li>';
 			});
 			$("#pRec").append(jsonData);
 		});

@@ -66,6 +66,7 @@
 		</header>
 		<div id="wrapper">
 			<main>
+				
 				<br>
 				<a href="#" data-toggle="modal" data-target="#myFrizer"><img src="images/fridge1.png" title="frizer" alt="frizer"></a><br>
 				<a href="#" data-toggle="modal" data-target="#myFridge"><img src="images/fridge2.png" title="fridge" alt="fridge"></a>
@@ -82,8 +83,8 @@
 							<div class="modal-body">
 								<ul class="popProds">
 									<?php
-									include ('controller.php');
 									myFridge($_SESSION["username"]);
+									profile($_SESSION["username"]);	
 									for($x = 0; $x < count($GLOBALS['prods']); $x++) {
 										if( $GLOBALS['place'][$x] == 1){
 											echo "<li><section>"  . $GLOBALS['amount'][$x]."</section>";  

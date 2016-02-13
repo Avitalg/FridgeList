@@ -179,6 +179,7 @@ body{
 .clear{
 	clear : both;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
 		background-color: #FFFFFF;
 }
@@ -269,8 +270,15 @@ body{
 	margin: 7px;
 }
 
-#pRec img:first-child{
+#pRec img{
 	width: 140px; /*in case no image available*/
+	height: 96px;
+	border-radius: 4px;
+	background:  url('../images/noimage.jpg');
+	font-size: 0px;
+}
+
+img{
 	
 }
 	
@@ -376,6 +384,9 @@ body{
 #recipe_body .rpic{
 	max-width: 60%;
 	min-width: 40%;
+	background:  url('../images/nopic.jpg') no-repeat;
+	border: 0px;
+	font-size: 0px;
 }
 
 #recipe_body h2{
@@ -691,6 +702,10 @@ footer a:visited{
 		margin: 0px;
 	}
 	
+	#wrapper main{
+		margin-bottom: 70px;
+	}
+	
 	#wrapper #prods{
 		display: none;
 	}
@@ -717,21 +732,32 @@ footer a:visited{
 	/********/
 	
 	/**possible recipes**/
-	#pRec li{
-		display: table-cell;
-	}
-	#pRec a{
-		display: table-cell;
-		text-align: center;
+	#pRec_wrapper{
+		width:90%;
 	}
 	#pRec li p{
 		text-align: center;
-		font-size: 15px;
-		display: table-cell;
+		float: right;
+		font-size: 14px;
+		width: 150px;
+		margin: 5px;
+	}
+		
+	#pRec{
+		width: 380px;
 	}
 	
-	#pRec li:nth-child(3n+3) {  
-		display: table-column;
+	#pRec a{
+		height: 200px;
+	}
+	
+	#pRec li span{
+		display: block;
+	}
+	
+	#pRec li{  
+		float: left;
+		padding: 10px;
 	}
 	/*******/
 	
@@ -757,6 +783,7 @@ footer a:visited{
 	#heart{
 		float: right;
 	}
+
 	/***********/
 	
 }
@@ -782,18 +809,32 @@ footer a:visited{
 	}
 	
 	/**possible recipes**/
-	#pRec li{
-		display: table-cell;
+	#pRec{
+		width: 740px;
 	}
 	
 	#pRec li p{
 		text-align: center;
-		font-size: 15px;
-		display: table-cell;
+		float: left;
+		font-size: 12px;
+		width: 150px;
+		margin: 5px;
 	}
 	
-	#pRec li:nth-child(4n+4) {  
-		display: table-column;
+	#pRec li span{
+		display: block;
+	}
+	
+	#pRec li{  
+		float: left;
+		margin: 10px;
+	}
+	
+	#pRec a{
+		height: 170px;
+	}
+	.content{
+		width: 90%;
 	}
 	/*******/
 	

@@ -59,7 +59,9 @@
 			<h1>Profile</h1>
 		</header>
 		<br>
-		<section id="profile_wrapper">	
+		<section id="profile_wrapper">
+			<img src="images/profile.png" title="profile" alt="profile">
+			<br><br>
 			<section id="label_section">
 				<p>Name</p>
 				<p>Username</p>

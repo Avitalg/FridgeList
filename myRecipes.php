@@ -65,7 +65,7 @@
 								echo '<li><a href="recipeDetails.php?recipeId=' 
 										. urlencode($GLOBALS['recipeId'][$x]) . '">';
 								echo '<img src="' . $GLOBALS['recipe_pic'][$x] . '" alt="' 
-										. $GLOBALS['title'][$x] . '"><p>' . $GLOBALS['title'][$x] . '</p></a></li>';
+										. $GLOBALS['title'][$x] . '"><span></span><p>' . $GLOBALS['title'][$x] . '</p></a></li>';
 							}
 						}
 						else echo "<p>No favorite recipes fount</p>";
