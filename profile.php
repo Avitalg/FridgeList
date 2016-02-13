@@ -93,5 +93,6 @@
 			<br>
 			<button id="profile" type="button" class="button">Change</button>
 		</section>	
+		<br>
 	</body>
 </html>
