@@ -11,6 +11,10 @@ body{
 	overflow-x: hidden;
 }
 
+nav{
+   width: 100%;
+}
+
 /**scroll**/
 ::-webkit-scrollbar {
       width: 15px;
@@ -32,6 +36,16 @@ body{
       background-color: black;
 } 
 /******/
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover , .navbar-default .navbar-nav>.active>a:focus{
+	background:#92d36e;
+	color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	background:#92d36e;
+	color: #000000;
+}
 
 #wrapper{
 	margin : 0px auto;
@@ -57,10 +71,14 @@ body{
 	background: #b2b300;
 }
 
+#qRecipes, #pRecipes, #fRecipes{
+	float: left;
+}
+
 .button{
 	font-family : 'Raleway', sans-serif;
 	margin : 0 auto;
-	text-align: center;
+ 	text-align: center;
 	background : #606060;
 	height : 53px;
 	width : 127px;
@@ -95,7 +113,7 @@ body{
 	display : block;
 	background : url('../images/logo.png');
 	margin : auto;
-	margin-top: 73px;
+	margin-top: 30px;
 	width : 280px;
 	height : 239px;
 	box-shadow: 3px 5px 3px 3px rgba(00,00,00,0.75);	
@@ -148,7 +166,7 @@ header h1{
 
 #main_nav{
 	margin: 0px auto;
-	margin-top: 113px;
+	margin-top: 110px;
 	text-align:center;
 	background: #FFFFFF;
 }
@@ -172,6 +190,16 @@ body{
 	display: table;
 	max-width: 350px;
 	margin-bottom: 80px;
+}
+
+#buttons_wrapper{
+	margin: 0 auto;
+	text-align: center;
+	width: 400px;
+}
+
+#buttons_wrapper .button{
+	margin-right: 5px;
 }
 
 #prods article{
@@ -216,6 +244,11 @@ body{
 	display: table-cell;
 	width: 100px;
 }
+
+.redText{
+	color: #FF0000;
+}
+
 /***********/
 
 
@@ -223,6 +256,11 @@ body{
 #pRec_wrapper{
 	margin : 0px auto;
 	text-align : center;
+	width: 90%;
+}
+
+#pRec_wrapper>p{
+	font-size: 10px;
 }
 
 #pRec img{
@@ -235,23 +273,30 @@ body{
 	width: 140px; /*in case no image available*/
 	
 }
-
+	
 #pRec{
 	display: table;
 	margin: 0px auto;
 	margin-top: 7px;
+	margin-bottom: 70px;
 }
 
 #pRec a{
 	text-decoration: none;
 	color: #232323;	
-	display: table-cell;
+	display: table-row;
 	vertical-align: middle;
 	text-align:left;
 	padding-right: 10px;
 	font-size: 18px;
 	width: 400px;
 }
+
+#pRec a p{
+		display: table-cell;
+		vertical-align: center;
+		width: 400px;
+	}
 
 #pRec li{
 	display: table-row;
@@ -265,6 +310,31 @@ body{
 
 #pRec a:hover{
 	color: #FFFFFF;
+}
+
+#searchText.form-control{
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	
+}
+
+#pRec_wrapper p{
+	margin-top: 40px;
+}
+
+.input-group-btn #go{
+	//float: left;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.btn.btn-success.btn-lg.dropdown-toggle{
+	width: 150px;
+	margin-top: 10px;
+	font-size: 12px;
+	text-align: center;
+	background: #92d36e;
 }
 /********/
 
@@ -362,10 +432,10 @@ footer a:visited{
 }
 
 #login_form{
-		margin: 0 auto;
-		text-align: center;
-		margin-top: 110px;
-		width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 110px;
+	width: 300px;
 }
 
 #login_form label{
@@ -384,38 +454,52 @@ footer a:visited{
 /**********/
 
 /**Sign Up**/
-#signup_body label{
+#labels{
 	float: left;
-	text-align: center;
-	margin-top: 25px;
-	margin-right: 10px;
+	width: 40%;
+	text-align: left;
 }
 
-#signup_body input{
-	float: right;
+#signup_wrapper{
+	width: 350px;
 	text-align: center;
-	margin-top: 25px;
-	margin-right: 10px;
-}
-#signup_body .preference{
-	float: left;
+	margin: 0 auto;
 }
 
-#signup_body .preference section{
+#labels label{
+	display: block;
+	margin: 0px;
+}
+
+#inputs{
 	float: right;
-	margin-left: 50px;
-	margin-top: 25px;
+}
+
+#inputs input{
+	height: 16px;
+	float: left;
+	margin-top: 3px;
+}
+
+.signup{
+	margin-top: 100px;
+	text-align: center;
+}
+
+#signup_body #inputs .preference{
+	float: left;
+	text-align: left;
 }
 
 #signup_body .preference input{
 	float: left;
-	margin-top: 5px;
+	text-align: left;
 }
 
-#signup_body #form_wrapper p{
+#signup_body #signup_wrapper p{
 	color: rgb(225,0,0);
 	font-size: 12px;
-	float: left;
+	text-align: left;
 	margin-right: 20px;
 }
 
@@ -425,55 +509,78 @@ footer a:visited{
 /**********/
 
 /**Profile**/
-#label_section{
-	float: left;
-	margin-right: 20px;
-	color: #444444;
-	font-size: 14px;
-	font-weight: 900;
+#profile_wrapper{
+	margin: 0 auto;
+	width: 300px;
+	text-align: center;
+	margin-top: 20px;
+	background: #E8E8E8;
+	padding: 10px;
+	border-top-left-radius:2em;
+	border-bottom-right-radius:2em;
 }
 
-.profile{
-	margin-top: 15px;
+#change_body .preference{
+	float: right;
+	text-align: left;
+}
+
+#form_wrapper.profile section:first-child{
+	float: left;
+}
+
+#label_section{
+	float: left;
+	text-align: left;
+	font-weight: 900;
 }
 
 #data_section{
 	float: right;
-	color: #444444;
-	font-size: 14px;
-}
-
-#form_wrapper p{
-	float: left;
-	margin: 0px;
-	padding: 0px;
-	clear: both;
-}
-
-#form_wrapper label{
-	float: left;
-	clear: both;
-
-}
-
-#data_section p{
-	margin-top: 10px;
-}
-
-#label_section label{
-	margin-top: 10px;
+	text-align: left;
 }
 
 #profile{
+	margin: 0 auto;
 	margin-top: 20px;
 }
-/*******/
 
+#form_wrapper.profile{
+	margin-top: 20px;
+	width: 300px;
+}
+
+#form_wrapper.profile label{
+	float: left;
 	
-@media screen and (max-width : 480px){
+}
+
+#form_wrapper.profile section{
+	margin: 0 auto;
+}
+/*******/
+	
+@media screen and (max-width : 500px){
+	#main_nav{
+		margin-top: 50px;
+	}
+	
+	#logo{
+		margin-top: 20px;
+	}
 
 	.collapse .nav{
 		background-color: #555555;
+	}
+	
+	.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover , .navbar-default .navbar-nav>.active>a:focus{
+		background:#444444;
+		color: #aaaaaa;
+	}
+	
+	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+		background: #7a7a7a;
+		color: #444444;
 	}
 	
 	.navbar.navbar-default .collapse.navbar-collapse{
@@ -494,12 +601,79 @@ footer a:visited{
 	#wrapper main{
 		display: none;
 	}
+
+	#signup_wrapper{
+		width: 300px;
+	}
+	
+	#signup_body #inputs label{
+		font-size: 10px;
+	}
+
+	#pRec {
+		display: table;
+	}
+
+	#pRec img{	
+		display: table-cell;
+	}
+
+	#pRec li{
+		font-size: 15px;
+		display: table-row;
+	}
+	
+	#pRec a p{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	#buttons_wrapper{
+		width: 320px;
+	}
+	#buttons_wrapper .button{
+		font-size: 12px;
+		width: 100px;
+	}
+	
+	#login_form{
+		font-size: 20px;
+		width: 300px;
+	}
+
+	#login_form label{
+		font-size: 20px;
+	}
+
+	#prods article{
+		font-size: 18px;
+	}
 	
 }
-@media screen and (min-width:481px) and (max-width:767px){
+@media screen and (min-width:501px) and (max-width:767px){
+
+	#login_form{
+		font-size: 20px;
+		width: 400px;
+	}
+
+	.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover , .navbar-default .navbar-nav>.active>a:focus{
+		background:#444444;
+		color: #aaaaaa;
+	}
+	
+	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+		background: #7a7a7a;
+		color: #444444;
+	}
+	
+	#login_form label{
+		font-size: 20px;
+	}	
+
 	nav{
 		height: 101px;
 		line-height: 100px;
+		z-index: 10;
 	}
 	
 	#title_logo{
@@ -546,9 +720,14 @@ footer a:visited{
 	#pRec li{
 		display: table-cell;
 	}
-	
-	#pRec li a{
+	#pRec a{
+		display: table-cell;
 		text-align: center;
+	}
+	#pRec li p{
+		text-align: center;
+		font-size: 15px;
+		display: table-cell;
 	}
 	
 	#pRec li:nth-child(3n+3) {  
@@ -568,16 +747,15 @@ footer a:visited{
 		font-size: 18px;
 	}
 	
-	#recipe_body h2 img{
-		float: left;
-	}
-	
 	#recipe_body ol{
 		margin-bottom: 80px;
 	}
 	
 	#recipe_body .recDetails{
 		margin-bottom: 80px;
+	}
+	#heart{
+		float: right;
 	}
 	/***********/
 	
@@ -602,4 +780,21 @@ footer a:visited{
 	#title_logo{
 		font-size: 36px;
 	}
+	
+	/**possible recipes**/
+	#pRec li{
+		display: table-cell;
+	}
+	
+	#pRec li p{
+		text-align: center;
+		font-size: 15px;
+		display: table-cell;
+	}
+	
+	#pRec li:nth-child(4n+4) {  
+		display: table-column;
+	}
+	/*******/
+	
 }

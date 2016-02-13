@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='https://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -28,13 +29,26 @@
 					<span class = "icon-bar"></span>
 					<span class = "icon-bar"></span>
 					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
 				</button>		
 				<a id="title_logo" class = "navbar-brand" href = "#">Fridge List</a>
 		    </div>
 			<div class = "collapse navbar-collapse" id = "navbar-collapse">
 				<ul class = "nav navbar-nav">
-					<li class = "border"><a href = "profile.php">Profile</a></li>
+					<li class = "active border"><a href = "profile.php">Profile</a></li>
 					<li class="border"><a href = "home.php">My Fridge</a></li>
+					<li class = "dropdown border">
+						<a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+						   Recipes 
+						   <b class = "caret"></b>
+						</a>
+						
+						<ul class = "dropdown-menu">
+						   <li><a href = "possibleRecipes.php?recipe=myFridge">Possible Recipes</a></li>
+						   <li><a href = "possibleRecipes.php?recipe=quick">Quick Recipes</a></li>
+						   <li><a href = "possibleRecipes.php?recipe=search">Search Recipes</a></li>
+						</ul> 
+					</li>
 					<li class="border"><a href = "myRecipes.php">My Recipes</a></li>
 					<li class="border"><a href = "home.php?logout=true">Log Out</a></li>
 					
@@ -44,11 +58,12 @@
 		<header>
 			<h1>Profile</h1>
 		</header>
-		<section id="form_wrapper">	
+		<br>
+		<section id="profile_wrapper">	
 			<section id="label_section">
-				<label>Name</label>
-				<label>Username</label>
-				<label class="float_left">Preference</label>
+				<p>Name</p>
+				<p>Username</p>
+				<p>Preferences</p>
 			</section>
 			<section id="data_section">
 				<p>
@@ -61,17 +76,19 @@
 						echo $GLOBALS['user'][1];
 					?>
 				</p>
+				<p>
 					<?php
 						if($GLOBALS['user'][2]==1)
-							echo '<p> Grluten Free </p>';
+							echo '<p> Gluten Free </p>';
 						if($GLOBALS['user'][3]==1)
 							echo '<p> Dairy Free </p>';
 						if($GLOBALS['user'][4]==1)
 							echo '<p> Vegeterian </p>';				
 					?>
-				<br>
+				</p>
 			</section>
 			<div class="clear"></div>
+			<br>
 			<button id="profile" type="button" class="button">Change</button>
 		</section>	
 	</body>

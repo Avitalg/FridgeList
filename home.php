@@ -14,6 +14,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='https://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -31,18 +32,34 @@
 					<span class = "icon-bar"></span>
 					<span class = "icon-bar"></span>
 					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
 				</button>		
 				<a id="title_logo" class = "navbar-brand" href = "#">Fridge List</a>
 		    </div>
 			<div class = "collapse navbar-collapse" id = "navbar-collapse">
 				<ul class = "nav navbar-nav">
 					<li class = "border"><a href = "profile.php">Profile</a></li>
-					<li class="border"><a href = "home.php">My Fridge</a></li>
+					<li class="active border"><a href = "home.php">My Fridge</a></li>
+					<li class = "dropdown border">
+						<a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+						   Recipes 
+						   <b class = "caret"></b>
+						</a>
+						
+						<ul class = "dropdown-menu">
+						   <li><a href = "possibleRecipes.php?recipe=myFridge">Possible Recipes</a></li>
+						   <li><a href = "possibleRecipes.php?recipe=quick">Quick Recipes</a></li>
+						   <li><a href = "possibleRecipes.php?recipe=search">Search Recipes</a></li>
+						</ul> 
+					</li>
 					<li class="border"><a href = "myRecipes.php">My Recipes</a></li>
 					<li class="border"><a href = "home.php?logout=true">Log Out</a></li>
 					
 				</ul>
 			</div>
+			
+		
+			
 		</nav>
 		<header>
 			<h1>My Fridge</h1>
@@ -72,7 +89,7 @@
 											echo "<li><section>"  . $GLOBALS['amount'][$x]."</section>";  
 											echo "<section>". $GLOBALS['unit'][$x]."</section>";
 											echo "<section>".$GLOBALS['prods'][$x] . "</section>"; 
-											echo "<section>" . $GLOBALS['expiry'][$x] . "</section></li>";
+											echo '<section class="date">' . $GLOBALS['expiry'][$x] . '</section></li>';
 										}
 									}
 									?>
@@ -106,7 +123,7 @@
 												echo "<li><section>"  . $GLOBALS['amount'][$x]. "</section>";
 												echo "<section>". $GLOBALS['unit'][$x]."</section>";
 												echo "<section>".$GLOBALS['prods'][$x] . "</section>"; 
-												echo "<section>" . $GLOBALS['expiry'][$x] . "</section></li>";
+												echo '<section class="date">' . $GLOBALS['expiry'][$x] . '</section></li>';
 											}
 										}
 										echo "</ul>";
@@ -128,13 +145,17 @@
 						echo "<li><article>"  . $GLOBALS['amount'][$x]. "</article>";  
 						echo "<article>". $GLOBALS['unit'][$x] . "</article>";
 						echo "<article>".$GLOBALS['prods'][$x] . "</article>"; 
-						echo "<article>" . $GLOBALS['expiry'][$x] . "</article></li>";
+						echo '<article class="date">' . $GLOBALS['expiry'][$x] . '</article></li>';
 					}
 				?>
 			</ul>
 		</div>
 		<footer>
-			<button id="pRecipes" type="button" class="button">Possible Recipes</button>
+			<section id="buttons_wrapper">
+				<button id="pRecipes" type="button" class="button">Possible Recipes</button>
+				<button id="qRecipes" type="button" class="button">Quick Recipes</button>
+				<button id="fRecipes" type="button" class="button">Search Recipes</button>
+			</section>
 		</footer>
 	</body>
 </html>

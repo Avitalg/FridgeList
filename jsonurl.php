@@ -6,11 +6,13 @@
      $apiKey = "key=f3adcdc86cb0e21c0aeba6226cbe382f";
      $querySearch = "&q=";
      $ridsearch= "&rId=";*/
-     
+
      //campbellskitchen
      $baseUrlSearch = "http://api.campbellskitchen.com/brandservice.svc/api/search?";
      $baseUrlGet = "http://api.campbellskitchen.com/brandservice.svc/api/recipe/";
      $ingrediantSearch = "ingredient=";
+	 $preptime = "preptime=";
+	 $keywords = "keywords=";
      $get_format = "format=json";
      $format= "&format=json";
      $appId = "&app_id=8bf7e745";
